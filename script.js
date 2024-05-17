@@ -23,8 +23,15 @@ sections.forEach(sec => {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            })
+            });
+            // active sections for animation on scroll
+            sec.classList.add('show-animate');
         }
+        // if wants to use animation that repeats on scroll use this
+        else{
+            sec.classList.remove('show-animate');
+        }
+
 });
     let header = document.querySelector('header');
     

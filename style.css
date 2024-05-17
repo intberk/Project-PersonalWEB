@@ -24,7 +24,7 @@ html{
 }
 
 body {
-    /* background: #081b29; */
+    background: var(--bg-color);
     color: var(--text-color);
 }
 
@@ -53,22 +53,14 @@ body {
     font-weight: 600;
 }
 
-.logo::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
+.navbar{
+    position: relative;
 }
 
 .navbar a{
     font-size: 1.7rem;
     color: var(--text-color);
-    font-weight:500;
+    font-weight: 500;
     margin-left: 3.5rem;
     transition: .3s;
 }
@@ -80,12 +72,12 @@ body {
 }
 
 #menu-icon{
+    position: relative;
     font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
     display: none;
 }
-
 
 section{
     min-height: 100vh;
@@ -109,6 +101,7 @@ section{
 
 .home-content h1{
     position: relative;
+    display: inline-block;
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
@@ -118,24 +111,13 @@ section{
     color: var(--text-color);
 }
 
-.home-content h1::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1s;
-}
-
 .home-content .text-animate{
     position: relative;
     width: 32.8rem;
 }
 
 .home-content .text-animate h3{
+    
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
@@ -161,34 +143,10 @@ section{
     animation-delay: 2s;
 }
 
-.home-content h3::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.3s;
-}
-
 .home-content p{
     position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
-}
-
-.home-content p::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.6s;
 }
 
 .btn-box{
@@ -197,19 +155,6 @@ section{
     justify-content: space-between;
     width: 34.5rem;
     height: 5rem;
-}
-
-.btn-box::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.9s;
-    z-index: 2;
 }
 
 .btn-box .btn{
@@ -272,19 +217,6 @@ section{
     justify-content: space-between;
 }
 
-.home-sci::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 2.5s;
-    z-index: 2;
-}
-
 .home-sci a{
     position: relative;
     display: inline-flex;
@@ -322,11 +254,6 @@ section{
     width: 100%;
 }
 
-
-
-
-
-
 .home-imgHover{
     position: absolute;
     top: 0;
@@ -335,8 +262,6 @@ section{
     height: 100%;
     background: transparent;
     transition: 3s;
-
-
     animation: manipActiveHover .1s forwards;
     animation-delay: 4s;
     pointer-events: none;
@@ -347,61 +272,7 @@ section{
     opacity: .8;
 }
 
-.home-imgHover::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 120%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 3s;
-    z-index: 100;
-}
-
-/* KEYFRAMES ANIMATION */
-@keyframes homeBgText{
-    0%,10%,100%{
-        background-position: -33rem, 0;
-    }
-
-    65%,85%{
-        background-position: 0, 0;
-    }
-}
-
-@keyframes homeCursorText{
-    0%,10%,100%{
-        width: 0;
-    }
-
-    65%,78%,85%{
-        width: 100%;
-        opacity: 1;
-    }
-
-    75%,81%{
-        opacity: 0;
-    }
-}
-
-
-
-
-@keyframes showRight {
-    100%{
-        width: 0;
-    }
-}
-@keyframes manipActiveHover{
-    100%{
-        pointer-events: auto;
-    }
-}
-
-
-/* about section */
+/* ABOUT SECTION */
 .about {
     display: flex;
     justify-content: center;
@@ -450,6 +321,7 @@ span {
     border-bottom: .2rem solid var(var(--second-bg-color));
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(var(--main-color));
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content{
@@ -474,7 +346,7 @@ span {
     background: var(--second-bg-color);
 }
 
-/* education & experience section */
+/* EDUCATION & EXPERIENCE SECTION */
 .education{
     display: flex;
     justify-content: center;
@@ -565,7 +437,7 @@ span {
 }
 
 
-/* skills section */
+/* SKILLS SECTION */
 .skills {
     min-height: auto;
     padding-bottom: 7rem;
@@ -674,7 +546,7 @@ span {
 }
 
 
-/* contact section */
+/* CONTACT SECTION */
 .contact{
     min-height: auto;
     padding-bottom: 7rem;
@@ -752,7 +624,9 @@ span {
 }
 
 
-/* footer design */
+
+
+/* FOOTER SECTION */
 .footer{
     display: flex;
     justify-content: space-between;
@@ -805,8 +679,9 @@ span {
     color: var(--main-color)
 }
 
+/* --------------------------------------- */
 
-/* BREAKPOINTS */
+/* BREAKPOINTS - Media Settings */
 @media (max-width: 1200px){
     html {
         font-size: 55%;
@@ -955,4 +830,75 @@ span {
     .home-content h1 {
         font-size: 5rem;
     }
+}
+
+/* ------------------------------------------------ */
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes homeBgText{
+    0%,10%,100%{
+        background-position: -33rem, 0;
+    }
+
+    65%,85%{
+        background-position: 0, 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%,10%,100%{
+        width: 0;
+    }
+
+    65%,78%,85%{
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,81%{
+        opacity: 0;
+    }
+}
+
+@keyframes manipActiveHover{
+    100%{
+        pointer-events: auto;
+    }
+}
+
+@keyframes aboutSpinner{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ------------------------------------------------ */
+
+/* ANIMATION RELOAD & SCROLL */
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 98;
+}
+
+.animate.home-img{
+    width: 50%;
+}
+
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
 }
